@@ -37,5 +37,4 @@ pub trait Command {
     }
 
     fn command_name(&self) -> String;
-
 }
