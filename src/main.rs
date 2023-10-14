@@ -6,12 +6,11 @@ mod commands;
 use commands::get_command_map;
 
 //TODO: Proper flag and value handling
-//TODO: Fix command_tree not working without a directory input
 //TODO: Speed up performance
 
 fn main() {
     // Print the program version
-    print!("Rust Command Line [Version {}] (c) Rust Community. All rights reserved.\n", env!("CARGO_PKG_VERSION"));
+    print!("Rust Command Line [Version {}]\n(c) Rust Community. All rights reserved.\n\n", env!("CARGO_PKG_VERSION"));
 
     // Retrieve the command map, which maps command names to their respective functions
     let command_map = get_command_map();

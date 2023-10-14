@@ -10,7 +10,7 @@ impl Command for ClearCommand {
         print! ("\x1B[2J\x1B[1;1H");
 
         // Print a header indicating the program version
-        print!("Rust Command Line [Version {}] (c) Rust Community. All rights reserved.\n", env!("CARGO_PKG_VERSION"));
+        print!("Rust Command Line [Version {}]\n(c) Rust Community. All rights reserved.\n\n", env!("CARGO_PKG_VERSION"));
     }
 
     // Implement the predefined_args function to specify that there are no expected arguments
