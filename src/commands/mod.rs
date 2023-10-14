@@ -9,7 +9,7 @@ pub mod command_listdir;
 pub mod command_tree;
 pub mod command_delete;
 pub mod command_echo;
-mod command_help;
+pub mod command_help;
 
 lazy_static::lazy_static! {
     static ref COMMAND_MAP: HashMap<&'static str, Box<dyn Command>> = {
@@ -23,6 +23,7 @@ lazy_static::lazy_static! {
         command_map.insert("tree", Box::new(command_tree::TreeCommand) as Box<dyn Command>);
         command_map.insert("delete", Box::new(command_delete::DeleteCommand) as Box<dyn Command>);
         command_map.insert("echo", Box::new(command_echo::EchoCommand) as Box<dyn Command>);
+        command_map.insert("help", Box::new(command_help::HelpCommand) as Box<dyn Command>);
         command_map
     };
 }
