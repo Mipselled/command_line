@@ -26,12 +26,8 @@ impl Command for TemplateCommand {
         }
     }
 
-    fn command_name(&self) -> String {
-        return String::from("template");
-    }
-
     fn predefined_args(&self) -> Vec<String> {
-        vec!["--flag".to_string(), "value".to_string()]
+        vec!["[--flag]".to_string(), "[value]".to_string()]
     }
 
     // Override the default implementation for flag processing

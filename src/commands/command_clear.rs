@@ -1,26 +1,20 @@
-use super::Command;
+use super::Command; // Import the Command trait defined in the parent module
 
+// Define a struct representing the "clear" command
 pub struct ClearCommand;
 
 impl Command for ClearCommand {
+    // Implement the execute function for the "clear" command
     fn execute(&self, _args: Vec<String>) {
-        if cfg!(target_os = "windows") {
-            // On Windows
-            print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
-        } else {
-            // On Unix-like systems
-            print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
-        }
+        // Clear the screen
+        print! ("\x1B[2J\x1B[1;1H");
 
+        // Print a header indicating the program version
         print!("Rust Command Line [Version {}] (c) Rust Community. All rights reserved.\n", env!("CARGO_PKG_VERSION"));
     }
 
-    fn command_name(&self) -> String {
-        return String::from("clear");
-    }
-
+    // Implement the predefined_args function to specify that there are no expected arguments
     fn predefined_args(&self) -> Vec<String> {
         vec![]
     }
-
 }
