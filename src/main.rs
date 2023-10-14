@@ -5,6 +5,10 @@ use std::env;
 mod commands;
 use commands::get_command_map;
 
+//TODO: Make proper flag and value handling
+//TODO: Add help and delete
+//TODO: Fix command_tree not working with no directory input
+
 fn main() {
     print!("Rust Command Line [Version {}] (c) Rust Community. All rights reserved.\n", env!("CARGO_PKG_VERSION"));
     let command_map = get_command_map();
